@@ -18,10 +18,17 @@ TEST_CASE("Test sum_numbers function")
 /*test case add_to_double_1 with 0 as parameter*/
 
 /*test case add_to_double_1 with 1 as parameter*/
+TEST_CASE("Test add to double 1")
+{
+	REQUIRE(add_to_double_1(0) == .9);
+	REQUIRE(add_to_double_1(1) == 1.9);
+}
+
 
 /*test case add_to_double_2 with 0 as parameter*/
 
 /*test case add_to_double_2 with 1 as parameter*/
+
 
 /*test case char test ASCII values */
 
