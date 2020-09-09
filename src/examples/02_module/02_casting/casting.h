@@ -7,7 +7,7 @@ double interest_rate parameter
 /*
 Write int value-return function convert_double_to_int with a double parameter
 */
-
+int convert_double_to_int(double num);
 
 /*
 Write int value-return function static_cast_double_int with a double parameter
