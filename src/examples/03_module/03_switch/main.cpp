@@ -13,8 +13,8 @@ int main()
 	std::string result = menu(option);
 
 	cout<<result<<"\n";
-
-	option > 5 ? y = 10 : z = 20;//immediate if 
+	
+	option > 5 ? y = 10 : z = 20;
 	cout<<"Y "<<y<<" Z "<<z;
 
 	return 0;
