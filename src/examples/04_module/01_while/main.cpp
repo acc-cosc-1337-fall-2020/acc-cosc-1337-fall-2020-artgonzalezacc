@@ -9,12 +9,14 @@ int main()
 
 	while(choice == 'y' || choice == 'Y')
 	{
-		int value;
-		cout<<"Enter a number: ";
-		cin>>value;
+		int num = 5;
+		cout<<"Main num before function call: "<<num<<"\n";
+		//cout<<"Enter a number: ";
+		//cin>>num;
 
-		int result = sum_of_squares(value);
-		cout<<"Result is: "<<result<<"\n";
+		int sum = sum_of_squares(num);
+		cout<<"Main num after function call: "<<num<<"\n";
+		cout<<"Result is: "<<sum<<"\n";
 
 		cout<<"Enter y to continue, any other char to exit.";
 		cin>>choice;
