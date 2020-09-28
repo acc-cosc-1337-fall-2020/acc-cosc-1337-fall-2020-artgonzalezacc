@@ -2,6 +2,7 @@
 #include "catch.hpp"
 #include "while.h"
 #include "for.h"
+#include "value_ref.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
@@ -33,4 +34,11 @@ TEST_CASE("Test sum number function 2")
 	REQUIRE(sum_of_number_2(3) == 12);
 	REQUIRE(sum_of_number_2(4) == 20);
 	REQUIRE(sum_of_number_2(5) == 30);
+}
+
+TEST_CASE("Test get area default parameters")
+{
+	REQUIRE(get_area(5, 5) == 25);
+	REQUIRE(get_area() == 200);
+	REQUIRE(get_area(5) == 50);
 }

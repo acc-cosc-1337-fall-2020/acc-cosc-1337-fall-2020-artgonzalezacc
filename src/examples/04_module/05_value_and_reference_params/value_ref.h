@@ -1,3 +1,4 @@
+int get_area(int height=20, int width=10);
 
 /*
 Write function prototype for pass_by_val_and_ref with

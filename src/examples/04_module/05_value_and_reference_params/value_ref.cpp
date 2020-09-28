@@ -1,4 +1,8 @@
 #include "value_ref.h"
+int get_area(int height, int width)
+{
+    return height * width;
+}
 
 /*
 Write function code for pass_by_val_and_ref with

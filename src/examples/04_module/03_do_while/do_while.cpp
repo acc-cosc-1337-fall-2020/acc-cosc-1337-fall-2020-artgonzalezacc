@@ -15,10 +15,7 @@ void prompt_user()
 
 		cin>>choice;
 
-        if(choice < 4)
-        {
-            execute_menu(choice);
-        }
+        execute_menu(choice);
 		
 	}while(choice != 4);
 
@@ -45,6 +42,9 @@ void execute_menu(int option)
         break;
     case 3:
         cout<<"You chose option 3\n";
+        break;
+    case 4:
+        cout<<"You chose to exit\n";
         break;
     default:
         cout<<"Invalid option\n";
