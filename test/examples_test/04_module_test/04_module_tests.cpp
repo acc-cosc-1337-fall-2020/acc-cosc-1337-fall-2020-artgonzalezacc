@@ -3,6 +3,7 @@
 #include "while.h"
 #include "for.h"
 #include "value_ref.h"
+#include "vec.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
@@ -51,4 +52,80 @@ TEST_CASE("Test value and reference parameters")
 
 	REQUIRE(num1 == 0);
 	REQUIRE(num2 == 50);
+}
+
+TEST_CASE("Test function string value parameter")
+{
+	std::string name = "john";
+
+	loop_string_w_index(name);
+
+	REQUIRE(name == "john");
+}
+
+TEST_CASE("Test function string reference parameter")
+{
+	std::string name = "john";
+
+	loop_string_w_index_ref(name);
+
+	REQUIRE(name == "zzzz");
+}
+
+TEST_CASE("Test function string reference parameter for ranged w value target variable")
+{
+	std::string name = "john";
+
+	loop_string_w_index_for_ranged(name);
+
+	REQUIRE(name == "john");
+}
+
+TEST_CASE("Test function string reference parameter for ranged w ref target variable")
+{
+	std::string name = "john";
+
+	loop_string_w_index_for_ranged_ref(name);
+
+	REQUIRE(name == "zzzz");
+}
+
+TEST_CASE("Test function vector value parameter")
+{
+	std::vector<int> nums{10, 4, 2};
+	std::vector<int> expected_vector{10, 4, 2};
+
+	loop_vector_w_index(nums);
+
+	REQUIRE(nums == expected_vector);
+}
+
+TEST_CASE("Test function vector reference parameter")
+{
+	std::vector<int> nums{10, 4, 2};
+	std::vector<int> expected_vector{0, 0, 0};
+
+	loop_vector_w_index_ref(nums);
+
+	REQUIRE(nums == expected_vector);
+}
+
+TEST_CASE("Test function vector reference parameter w for ranged value target variable")
+{
+	std::vector<int> nums{10, 4, 2};
+	std::vector<int> expected_vector{10, 4, 2};
+
+	loop_vector_w_index_for_ranged(nums);
+
+	REQUIRE(nums == expected_vector);
+}
+
+TEST_CASE("Test function vector reference parameter w for ranged reference target variable")
+{
+	std::vector<int> nums{10, 4, 2};
+	std::vector<int> expected_vector{0, 0, 0};
+
+	loop_vector_w_index_for_ranged_ref(nums);
+
+	REQUIRE(nums == expected_vector);
 }
