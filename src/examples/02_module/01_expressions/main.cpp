@@ -1,15 +1,23 @@
+#include<string>
 #include<iostream>
-#include "expressions.h"
+using std::cout; std::using string;
+void loop_string(const string &str)
 
-using std::cout;
+{
+      string name = "mary";
+      for (int i = 0; i < str.length(); ++i)
+      {
+             str[i] = name[i];
+      }
+} 
 
 int main()
 {
-    int result = operator_precedence_1(12, 6, 3);
-    cout<<"Result 1 is: "<<result<<"\n";
 
-    result = operator_precedence_2(12, 6, 3);
-    cout<<"Result 2 is: "<<result;
+      string str = "john";
 
-    return 0;
+      loop_string(str);
+      cout << str;
+ 
+      return 0;
 }

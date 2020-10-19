@@ -8,29 +8,36 @@ TEST_CASE("Verify Test Configuration", "verification") {
 
 TEST_CASE("Test BankAccount initialization")
 {
-	BankAccount account;
+	BankAccount account(100);
 
-	REQUIRE(account.get_balance() == 0);
+	REQUIRE(account.get_balance() == 100);
 }
 
 TEST_CASE("Test BankAccount deposit function")
 {
-	BankAccount account;
-	REQUIRE(account.get_balance() == 0);
+	BankAccount account(100);
+	REQUIRE(account.get_balance() == 100);
 
 	account.deposit(100);
-	REQUIRE(account.get_balance() == 100);
+	REQUIRE(account.get_balance() == 200);
 
 }
 
 TEST_CASE("Test BankAccount withdraw function")
 {
-	BankAccount account;
-	REQUIRE(account.get_balance() == 0);
-
-	account.deposit(100);
+	BankAccount account(100);
 	REQUIRE(account.get_balance() == 100);
 
+	account.deposit(100);
+	REQUIRE(account.get_balance() == 200);
+
 	account.withdraw(50);
-	REQUIRE(account.get_balance() == 50);
+	REQUIRE(account.get_balance() == 150);
+}
+
+TEST_CASE("Test static bank_balance BankAccount variable")
+{
+	BankAccount account(100);
+
+	REQUIRE(account.get_bank_balance() == 550);
 }
