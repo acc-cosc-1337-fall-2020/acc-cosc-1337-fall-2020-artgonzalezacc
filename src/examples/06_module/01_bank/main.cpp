@@ -1,5 +1,6 @@
 #include"atm.h"
 #include "bank_account.h"
+#include "checking_account.h"
 #include<iostream>
 #include<time.h>
 
@@ -10,6 +11,8 @@ enum class BANK_OPTIONS{DEPOSIT=1, WITHDRAWAL=2, DISPLAY=3};//c++ 11
 
 int main()
 {	
+	CheckingAccount a;
+	
 	srand(time(NULL));//generates random numbers every time we run the program
 	//create a variable(instance) of the class
 	
