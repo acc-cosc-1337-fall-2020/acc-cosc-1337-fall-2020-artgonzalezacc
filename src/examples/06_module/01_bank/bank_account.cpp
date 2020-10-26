@@ -1,6 +1,5 @@
 //bank_account.cpp
 #include "bank_account.h"
-#include<iostream>
 
 BankAccount::BankAccount(int b) : balance(b)
 {
@@ -52,3 +51,28 @@ void friend_display_balance(const BankAccount& account)
 {
     std::cout<<"Friend display balance: "<<account.balance<<"\n";
 }
+
+std::ostream& operator<<(std::ostream& out, const BankAccount& a)
+{
+    out<<"Operator overload balance: "<<a.balance<<"\n";
+
+    return out;
+}
+
+std::istream& operator>>(std::istream& in, BankAccount& a)
+{
+    int amount;
+    std::cout<<"Enter amount: ";
+    in>>amount;
+
+    a.balance += amount;
+
+    return in;
+}
+
+ BankAccount operator+(const BankAccount& a1, const BankAccount& a2)
+ {
+     BankAccount account(a1.balance + a2.balance);
+
+     return account;
+ }
