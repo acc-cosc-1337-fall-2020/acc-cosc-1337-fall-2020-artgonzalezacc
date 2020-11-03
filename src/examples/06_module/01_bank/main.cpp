@@ -3,16 +3,17 @@
 #include "checking_account.h"
 #include<iostream>
 #include<time.h>
+#include<memory>
+#include<utility>
+#include<vector>
 
-using std::cout; using std::cin;
+using std::cout; using std::cin; using std::unique_ptr; using std::make_unique;
 
 enum transaction{DEPOSIT=1, WITHDRAWAL=2, DISPLAY=3};//legacy C++
 enum class BANK_OPTIONS{DEPOSIT=1, WITHDRAWAL=2, DISPLAY=3};//c++ 11
 
 int main()
 {	
-	CheckingAccount a;
-	
 	srand(time(NULL));//generates random numbers every time we run the program
 	//create a variable(instance) of the class
 	

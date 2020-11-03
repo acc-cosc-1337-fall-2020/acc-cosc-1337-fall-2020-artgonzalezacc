@@ -1,8 +1,8 @@
 //atm.h
-#include "bank_account.h"
+#include"customer.h"
 #include<iostream>
+#include<stdlib.h>
 #include<vector>
-#include<stdlib.h>//use of rand()
 
 //header guards
 #ifndef ATM_H
@@ -12,12 +12,13 @@ class ATM
 {
 public:
     ATM();
-    void display_balance()const;
+    void display_balance();
     void scan_card();
 private:
-    int get_balance_from_db();
-    std::vector<BankAccount> accounts;
-    int current_account_index;
+    std::vector<Customer> customers;
+    int account_index;
+    int customer_index;
+    
 };
 
 #endif
