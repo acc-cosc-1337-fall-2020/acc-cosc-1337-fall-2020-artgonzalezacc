@@ -26,7 +26,7 @@ class BankAccount
 public://access specifier-makes class function available to users of the class
     BankAccount() = default;//user defined default constructor
     explicit BankAccount(int b);//user created constructor
-    int get_balance() const {return balance;}//inline class function-const read only for class variables
+    virtual int get_balance() const {return balance;}//inline class function-const read only for class variables
     void deposit(int amount);
     void withdraw(int amount);
     static int get_bank_balance(){return bank_balance;}
