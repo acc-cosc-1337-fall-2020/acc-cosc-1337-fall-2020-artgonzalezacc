@@ -1,25 +1,37 @@
 #include "tic_tac_toe.h"
 
+using std::cin; using std::cout;
+
 int main() 
 {
 	TicTacToe tic_tac_toe;
 	std::string player;
-
-	std::cout<<"Enter X or O: ";
-	std::cin>>player;
-
-	tic_tac_toe.start_game(player);
+	char cont;
 
 	do
 	{
-		int position;
-		std::cout<<"Enter position from 1 to 9: ";
-		std::cin>>position;
-		tic_tac_toe.mark_board(position);
-		tic_tac_toe.display_board();
+		while(player != "X" && player != "O")
+		{
+			std::cout<<"Enter X or O: ";
+			std::cin>>player;
+		}
 
-	} while (tic_tac_toe.game_over() == false);
+		tic_tac_toe.start_game(player);
 
-	std::cout<<"Game over";
+		do
+		{
+			cin>>tic_tac_toe;
+			cout<<tic_tac_toe;
+
+		} while (tic_tac_toe.game_over() == false);
+
+		std::cout<<"Game over";
+		player = "";
+		
+		cout<<"Play again? y or Y ";
+		cin>>cont;
+
+	}while(cont == 'y' || cont == 'Y');
+
 	return 0;
 }

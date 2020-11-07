@@ -30,14 +30,6 @@ void TicTacToe::start_game(std::string first_player)
     clear_board();
 }
 
-void TicTacToe::display_board()const
-{
-    for(std::size_t i=0; i < pegs.size(); i += 3)
-    {
-        std::cout<<pegs[i]<<"|"<<pegs[i+1]<<"|"<<pegs[i+2]<<"\n";
-    }
-}
-
 void TicTacToe::set_next_player()
 {
     if(player == "X")
@@ -117,6 +109,26 @@ void TicTacToe::set_winner()
     }
     else
     {
-        winner = "C";
+        winner = "X";
     }
+}
+
+std::ostream& operator<<(std::ostream& out, const TicTacToe& game)
+{
+    for(std::size_t i=0; i < game.pegs.size(); i += 3)
+    {
+        std::cout<<game.pegs[i]<<"|"<<game.pegs[i+1]<<"|"<<game.pegs[i+2]<<"\n";
+    }
+
+    return out;
+}
+
+std::istream& operator>>(std::istream& in, TicTacToe& game)
+{
+    int position;
+    std::cout<<"Enter position 1-9: ";
+    in>>position;
+    game.mark_board(position);
+
+    return in;
 }
