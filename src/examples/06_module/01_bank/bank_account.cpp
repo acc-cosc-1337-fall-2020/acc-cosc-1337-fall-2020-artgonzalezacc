@@ -6,6 +6,11 @@ BankAccount::BankAccount(int b) : balance(b)
     bank_balance += balance;
 }
 
+int BankAccount::get_balance() const 
+{
+    return balance;
+}
+
 void BankAccount::deposit(int amount)
 {   
     if(amount > 0)
@@ -40,11 +45,12 @@ void display_bank_account(BankAccount& account)
     std::cout<<"Function: "<<account.get_balance()<<"\n";
 }
 
+/*
 BankAccount get_bank_account()
 {
     BankAccount account(500);
     return account;
-}
+}*/
 
 //friend free function--NOT A CLASS FUNCTION
 void friend_display_balance(const BankAccount& account)
@@ -70,9 +76,9 @@ std::istream& operator>>(std::istream& in, BankAccount& a)
     return in;
 }
 
- BankAccount operator+(const BankAccount& a1, const BankAccount& a2)
+ /*BankAccount operator+(const BankAccount& a1, const BankAccount& a2)
  {
      BankAccount account(a1.balance + a2.balance);
 
      return account;
- }
+ }*/

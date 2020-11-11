@@ -13,8 +13,8 @@ enum transaction{DEPOSIT=1, WITHDRAWAL=2, DISPLAY=3};//legacy C++
 enum class BANK_OPTIONS{DEPOSIT=1, WITHDRAWAL=2, DISPLAY=3};//c++ 11
 
 int main()
-{	BankAccount* a = new CheckingAccount();
-    unique_ptr<BankAccount> up_a = make_unique<CheckingAccount>();
+{	
+   // unique_ptr<BankAccount> up_a = make_unique<CheckingAccount>();
 
 	srand(time(NULL));//generates random numbers every time we run the program
 	//create a variable(instance) of the class
