@@ -14,3 +14,8 @@ std::unique_ptr<int> get_smart_pointer()
     return num;
 }
 
+void ref_ptr(int& num1, int* num2)
+{
+    num1 = 10;
+    *num2 = 20;
+}
