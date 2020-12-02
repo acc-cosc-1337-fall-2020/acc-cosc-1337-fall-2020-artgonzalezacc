@@ -17,7 +17,18 @@ int main()
     Vector v4(3);
     v4 = v3;
 
-    Vector v = get_vector();*/
+    //move constructor
+    Vector v5(3);
+    Vector v6 = std::move(v5);*/
+
+    //move assignment
+    Vector v7(3);
+    Vector v8(3);
+    v8 = get_vector();
+    
+
+/*
+    Vector v = get_vector();/
     //concept of templates
     Vector v;
     v.Pushback(3);
@@ -26,6 +37,8 @@ int main()
     
     v.Pushback(10);
     std::cout<<v[1];
+
+    */
 
     return 0;
 }
