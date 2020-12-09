@@ -1,5 +1,17 @@
 //cpp
 #include "tic_tac_toe_manager.h"
+#include<iostream>
+
+TicTacToeManager::TicTacToeManager(TicTacToeData d)
+: data{d}
+{
+    games = data.get_games();
+
+    for(auto& game: games)
+    {
+        update_winner_account(game->get_winner());
+    }
+}
 
 void TicTacToeManager::save_game(std::unique_ptr<TicTacToe>& game)
 {
@@ -46,15 +58,8 @@ std::ostream& operator<<(std::ostream& out, const TicTacToeManager& manager)
     return out;
 }
 
-std::unique_ptr<TicTacToe> TicTacToeManager::get_game(int game_type)
+TicTacToeManager::~TicTacToeManager()
 {
-	if (game_type == 3)
-	{
-		return std::make_unique<TicTacToe3>();
-	}
-	else 
-	{
-		return std::make_unique<TicTacToe4>();
-	}
-	
+    std::cout<<"\n save games\n";
+    data.save_games(games);
 }

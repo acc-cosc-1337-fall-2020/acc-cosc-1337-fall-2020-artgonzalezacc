@@ -12,11 +12,12 @@ false
 */
 bool TicTacToe4::check_column_win()
 {
-	for (int i = 0; i < 4; ++i)
+    for (int i = 0; i < 4; ++i)
 	{
 		if (pegs[i] == pegs[i + 4] && pegs[i + 4] == pegs[i + 8] &&
 			pegs[i + 8] == pegs[i + 12] && pegs[i] != " " &&
 			pegs[i + 12] != " ")
+
 
 			return true;
 	}
@@ -34,11 +35,12 @@ Win by row if
 */
 bool TicTacToe4::check_row_win()
 {
-	for (int i = 0; i < 16; i += 4)
+    for (int i = 0; i < 16; i += 4)
 	{
 		if (pegs[i] == pegs[i + 1] && pegs[i + 1] == pegs[i + 2] &&
 			pegs[i + 2] == pegs[i + 3] && pegs[i] != " " &&
 			pegs[i + 3] != " ")
+
 
 			return true;
 	}
@@ -53,10 +55,11 @@ Win diagonally
 4, 5,  6,  7
 8, 9, 10, 11
 12,13,14, 15
+
 */
 bool TicTacToe4::check_diagonal_win()
 {
-	if (pegs[0] == pegs[5] && pegs[5] == pegs[10] &&
+    if (pegs[0] == pegs[5] && pegs[5] == pegs[10] &&
 		pegs[10] == pegs[15] && pegs[0] != " " && pegs[15] != " ")
 	{
 		return true;
